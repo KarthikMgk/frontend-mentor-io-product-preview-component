@@ -10,11 +10,42 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
   </style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+
+  <div class="base-component bg-[#F2EAE4] h-screen w-full absolute">
+    <div class="relative product-card-component rounded-xl flex flex-col bg-white h-[80vh] w-[50vh] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <div class="product-image">
+        <img class="rounded-t-lg" src="./product-preview-card-component-main/images/image-product-mobile.jpg" alt="" srcset="">
+      </div>
+      <div class="product-text m-4 p-2">
+        <div class="product-tag font-extralight tracking-[4px]">PERFUME</div>
+        <div class="product-title font-bold text-4xl font-serif mt-3">Gabrielle Essence Eau De Parfum</div>
+        <div class="product-description font-extralight mt-5 opacity-50 font-extrabold">
+            A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+              Perfumer-Creator for the House of CHANEL.
+        </div>
+        <div class="product-price grid grid-cols-2 items-center mt-5">
+          <div class="product-avp text-[#235B49] text-4xl font-bold">
+            $149.99
+          </div>
+          <div class="product-mrp line-through font-extralight text-md opacity-75">$169.99</div>
+        </div>
+        <div class="add-to-cart-btn w-full h-[10px] bg-[#235B49] mt-5 min-h-10 p-2 rounded-lg flex items-center">
+          <div class="cart-logo-text ml-[13vh] flex items-center">
+            <img src="./product-preview-card-component-main/images/icon-cart.svg" alt="" srcset="">
+            <p class="ml-2 text-white font-bold">Add To Cart</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
 
   Perfume
 
@@ -34,3 +65,5 @@
   </div>
 </body>
 </html>
+
+
