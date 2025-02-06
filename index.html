@@ -19,25 +19,40 @@
 <body>
 
   <div class="base-component bg-[#F2EAE4] h-screen w-full absolute">
-    <div class="relative product-card-component rounded-xl flex flex-col bg-white h-[80vh] w-[50vh] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-      <div class="product-image">
-        <img class="rounded-t-lg" src="./product-preview-card-component-main/images/image-product-mobile.jpg" alt="" srcset="">
-      </div>
+    <div class="relative product-card-component rounded-xl flex flex-col md:flex md:flex-row bg-white h-[80vh] md:h-[45vh] w-[50vh] md:w-[50vh] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <picture>
+        <!-- Image for mobile (default) -->
+        <source 
+          media="(max-width: 767px)" 
+          srcset="./product-preview-card-component-main/images/image-product-mobile.jpg"
+        >
+        <!-- Image for desktop (md breakpoint and above) -->
+        <source 
+          media="(min-width: 768px)" 
+          srcset="./product-preview-card-component-main/images/image-product-desktop.jpg"
+        >
+        <!-- Fallback image -->
+        <img 
+          class="rounded-t-lg md:object-cover w-full md:rounded-lg md:rounded-r-none md:h-full md:w-[60vh]" 
+          src="./product-preview-card-component-main/images/image-product-mobile.jpg" 
+          alt="Product Image"
+        >
+      </picture>
       <div class="product-text m-4 p-2">
         <div class="product-tag font-extralight tracking-[4px]">PERFUME</div>
-        <div class="product-title font-bold text-4xl font-serif mt-3">Gabrielle Essence Eau De Parfum</div>
+        <div class="product-title font-bold text-4xl md:text-2xl font-serif mt-3">Gabrielle Essence Eau De Parfum</div>
         <div class="product-description font-extralight mt-5 opacity-50 font-extrabold">
             A floral, solar and voluptuous interpretation composed by Olivier Polge, 
               Perfumer-Creator for the House of CHANEL.
         </div>
         <div class="product-price grid grid-cols-2 items-center mt-5">
-          <div class="product-avp text-[#235B49] text-4xl font-bold">
+          <div class="product-avp text-[#235B49] text-4xl font-bold md:text-2xl">
             $149.99
           </div>
           <div class="product-mrp line-through font-extralight text-md opacity-75">$169.99</div>
         </div>
-        <div class="add-to-cart-btn w-full h-[10px] bg-[#235B49] mt-5 min-h-10 p-2 rounded-lg flex items-center">
-          <div class="cart-logo-text ml-[13vh] flex items-center">
+        <div class="add-to-cart-btn w-full h-3 bg-[#235B49] mt-5 min-h-10 p-2 rounded-lg flex items-center md:flex md:flex-row">
+          <div class="cart-logo-text ml-[13vh] md:ml-[5vh] flex items-center">
             <img src="./product-preview-card-component-main/images/icon-cart.svg" alt="" srcset="">
             <p class="ml-2 text-white font-bold">Add To Cart</p>
           </div>
@@ -45,20 +60,7 @@
       </div>
     </div>
     
-  </div>
-
-  Perfume
-
-  Gabrielle Essence Eau De Parfum
-
-  A floral, solar and voluptuous interpretation composed by Olivier Polge, 
-  Perfumer-Creator for the House of CHANEL.
-
-  $149.99
-  $169.99
-
-  Add to Cart
-  
+  </div>  
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
